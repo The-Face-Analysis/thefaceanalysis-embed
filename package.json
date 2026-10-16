@@ -1,0 +1,20 @@
+{
+  "name": "thefaceanalysis-embed",
+  "version": "0.1.0",
+  "description": "Drop-in face shape finder widget for any website: a <face-analysis-widget> web component and a React wrapper. Free; the measurement runs in the visitor's browser.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" },
+    "./react": { "types": "./src/react.d.ts", "default": "./src/react.js" }
+  },
+  "files": ["src"],
+  "sideEffects": ["./src/index.js"],
+  "peerDependencies": { "react": ">=17" },
+  "peerDependenciesMeta": { "react": { "optional": true } },
+  "homepage": "https://thefaceanalysis.com/embed",
+  "repository": { "type": "git", "url": "git+https://github.com/thefaceanalysis/thefaceanalysis-embed.git" },
+  "keywords": ["face-shape", "widget", "web-component", "embed", "face-analysis"],
+  "license": "MIT"
+}
