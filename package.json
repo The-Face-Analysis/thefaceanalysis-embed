@@ -14,7 +14,7 @@
   "peerDependencies": { "react": ">=17" },
   "peerDependenciesMeta": { "react": { "optional": true } },
   "homepage": "https://thefaceanalysis.com/embed",
-  "repository": { "type": "git", "url": "git+https://github.com/thefaceanalysis/thefaceanalysis-embed.git" },
+  "repository": { "type": "git", "url": "git+https://github.com/The-Face-Analysis/thefaceanalysis-embed.git" },
   "keywords": ["face-shape", "widget", "web-component", "embed", "face-analysis"],
   "license": "MIT"
 }
