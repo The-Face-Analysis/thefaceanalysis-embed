@@ -101,7 +101,7 @@ If you use a plain iframe, add the same link yourself:
 <iframe src="https://thefaceanalysis.com/embed/face-shape" title="Face shape detector by The Face Analysis" width="480" height="730"
         style="border:0;width:100%;max-width:480px" loading="lazy"></iframe>
 <p style="text-align:center;font:12px system-ui,sans-serif">Face analysis by
-  <a href="https://thefaceanalysis.com/face-shape" target="_blank" rel="noopener">The Face Analysis</a></p>
+  <a href="https://thefaceanalysis.com/face-shape" target="_blank">The Face Analysis</a></p>
 ```
 
 ## Frameworks

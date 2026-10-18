@@ -50,7 +50,6 @@ export class FaceAnalysisWidget extends HTMLElement {
     const a = document.createElement("a");
     a.href = ORIGIN + (PAGES[tool] || "/");
     a.target = "_blank";
-    a.rel = "noopener";
     a.textContent = "The Face Analysis";
     credit.append(`${CREDIT[lang]} `, a);
 
