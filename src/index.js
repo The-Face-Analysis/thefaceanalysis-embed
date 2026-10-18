@@ -9,14 +9,20 @@
  */
 const ORIGIN = "https://thefaceanalysis.com";
 const SIZES = { compact: [360, 560], standard: [480, 600], wide: [720, 520] };
-const PAGES = { "face-shape": "/face-shape" };
+const PAGES = { "face-shape": "/face-shape", "eye-shape": "/eye-shape", "canthal-tilt": "/canthal-tilt", "nose-shape": "/nose-shape", "lip-shape": "/lip-shape", "facial-thirds": "/facial-thirds", "fwhr": "/fwhr-calculator", "midface-ratio": "/midface-ratio", "face-symmetry": "/face-symmetry-test", "golden-ratio": "/golden-ratio-face-calculator", "pupillary-distance": "/pupillary-distance" };
+
+/** Tool ids this version knows. The credit link goes to the tool's own page. */
+export const TOOLS = Object.keys(PAGES);
 
 export class FaceAnalysisWidget extends HTMLElement {
   connectedCallback() {
     if (this._mounted) return;
     this._mounted = true;
     const tool = this.getAttribute("tool") || "face-shape";
-    if (!/^[a-z0-9-]+$/.test(tool)) return;
+    if (!PAGES[tool]) {
+      console.warn(`[tfa-embed] unknown tool "${tool}". Available: ${Object.keys(PAGES).join(", ")}`);
+      return;
+    }
     const [w, h] = SIZES[this.getAttribute("size")] || SIZES.standard;
 
     const frame = document.createElement("iframe");
