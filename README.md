@@ -66,8 +66,29 @@ that lists the valid ids.
 |---|---|---|---|---|
 | Which widget | `data-tfa-widget` | `tool` | one of the ids above | `face-shape` |
 | Size | `data-size` | `size` | `compact` (360 px), `standard` (480 px), `wide` (720 px) | `standard` |
+| Language | `data-lang` | `lang` | `en`, `de`, `es`, `fr`, `pt-br`, `nl`, `tr`, `it`, `pl`, `ru`, `ja`, `ko`, `hi`, `id` | `en` |
 
 The frame is as wide as its container up to the size you choose, and its height follows its content.
+
+## Languages
+
+The widget (its texts, labels and how numbers are written) and the credit sentence come in 14 languages: English (default), German, Spanish,
+French, Brazilian Portuguese, Dutch, Turkish, Italian, Polish, Russian, Japanese, Korean, Hindi and Indonesian.
+
+```html
+<div data-tfa-widget="eye-shape" data-lang="de"></div>
+<script async src="https://thefaceanalysis.com/embed.js"></script>
+
+<face-analysis-widget tool="eye-shape" lang="de"></face-analysis-widget>
+```
+
+`LANGS` exports the codes: `import { LANGS } from "thefaceanalysis-embed"`. An unknown `lang` falls back to English with a console warning. Only the
+widget and the credit sentence are translated: thefaceanalysis.com itself is in English, so the credit link and the "full measurements" link open
+English pages. Plain iframe users point `src` at `https://thefaceanalysis.com/embed/<lang>/<tool>` (for example `/embed/de/face-shape`; the
+language-less address stays English) and write the credit sentence for that language themselves, as listed on the
+[embed page](https://thefaceanalysis.com/embed).
+
+The `lang` option needs version 0.3.0 or newer.
 
 ## The credit link
 
@@ -77,7 +98,7 @@ credit has to live in your HTML to count as a credit. The terms ask for it to st
 If you use a plain iframe, add the same link yourself:
 
 ```html
-<iframe src="https://thefaceanalysis.com/embed/face-shape" title="Face shape detector by The Face Analysis" width="480" height="600"
+<iframe src="https://thefaceanalysis.com/embed/face-shape" title="Face shape detector by The Face Analysis" width="480" height="730"
         style="border:0;width:100%;max-width:480px" loading="lazy"></iframe>
 <p style="text-align:center;font:12px system-ui,sans-serif">Face analysis by
   <a href="https://thefaceanalysis.com/face-shape" target="_blank" rel="noopener">The Face Analysis</a></p>
@@ -97,7 +118,7 @@ Step-by-step instructions taken from each platform's help pages are in the
 
 ## How it works
 
-The element creates an `iframe` to `https://thefaceanalysis.com/embed/<tool>?h=<your hostname>` and keeps its height equal to its content. The frame
+The element creates an `iframe` to `https://thefaceanalysis.com/embed/<tool>?h=<your hostname>` (`/embed/<lang>/<tool>` for other languages) and keeps its height equal to its content. The frame
 posts `{ source: "tfa-embed", type: "resize", height }` to the parent window; the package handles it, and you can listen yourself if you use a plain
 iframe. Only `/embed/*` pages allow being framed (`Content-Security-Policy: frame-ancestors *`) and they are `noindex`.
 

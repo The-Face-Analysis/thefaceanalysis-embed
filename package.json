@@ -1,7 +1,7 @@
 {
   "name": "thefaceanalysis-embed",
-  "version": "0.2.0",
-  "description": "Add free face measurement widgets to any website: 11 tools (face shape, eye shape, canthal tilt, nose and lip proportions, thirds, fWHR, midface ratio, symmetry, golden ratio, pupillary distance) as a <face-analysis-widget> web component and a React component. The measurement runs in the visitor's browser.",
+  "version": "0.3.0",
+  "description": "Add free face measurement widgets to any website: 11 tools (face shape, eye shape, canthal tilt, nose and lip proportions, thirds, fWHR, midface ratio, symmetry, golden ratio, pupillary distance) as a <face-analysis-widget> web component and a React component, in 14 languages. The measurement runs in the visitor's browser.",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

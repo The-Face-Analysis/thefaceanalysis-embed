@@ -1,3 +1,3 @@
 import type { ReactElement } from "react";
-import type { ToolId, WidgetSize } from "./index";
-export function FaceAnalysisWidget(props: { tool?: ToolId; size?: WidgetSize }): ReactElement;
+import type { ToolId, WidgetLang, WidgetSize } from "./index";
+export function FaceAnalysisWidget(props: { tool?: ToolId; size?: WidgetSize; lang?: WidgetLang }): ReactElement;
